@@ -7,6 +7,7 @@ const morgan = require("morgan");
 const userRoute = require("./routes/users");
 const authRoute = require("./routes/auth");
 const postRoute = require("./routes/posts");
+const PORT = process.env.PORT || 5000;
 
 
 dotenv.config();
@@ -14,13 +15,6 @@ dotenv.config();
 //Database Connection
 
 DbConnect();
-// mongoose.connect(
-//     process.env.MONGODB_URL,
-//     { useNewUrlParser: true, useUnifiedTopology: true },
-//     () => {
-//       console.log("DB Connected...");
-//     }
-//   );
 
 
 
@@ -36,6 +30,6 @@ app.use("/api/auth", authRoute);
 app.use("/api/posts", postRoute);
 
 
-app.listen(8800, () =>{
-    console.log("Listening on port 8800")
-})
+app.listen(PORT, () =>{
+    console.log(`Listening on port ${PORT}`);
+});
