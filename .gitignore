@@ -1,0 +1,4 @@
+/dist
+/.env
+/models/dist
+/routes/dist
