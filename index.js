@@ -9,6 +9,7 @@ const authRoute = require("./routes/auth");
 const postRoute = require("./routes/posts");
 const PORT = process.env.PORT || 5000;
 const multer = require("multer");
+const router = express.Router();
 const path = require("path");
 
 
