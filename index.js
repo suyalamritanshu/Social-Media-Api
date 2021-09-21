@@ -1,16 +1,14 @@
 const express = require("express");
+const router = express.Router();
 const app = express();
 const dotenv = require("dotenv");
-const DbConnect = require('./database');
 const helmet = require("helmet");
 const morgan = require("morgan");
+const multer = require("multer");
 const userRoute = require("./routes/users");
 const authRoute = require("./routes/auth");
 const postRoute = require("./routes/posts");
-const PORT = process.env.PORT || 5000;
-const multer = require("multer");
 const path = require("path");
-
 
 dotenv.config();
 
@@ -19,8 +17,6 @@ dotenv.config();
 DbConnect();
 
 app.use("/images", express.static(path.join(__dirname, "public/images")));
-
-
 
 
 //middleware
