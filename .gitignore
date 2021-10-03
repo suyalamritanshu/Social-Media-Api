@@ -1,5 +1,5 @@
-/dist
-/.env
-/models/dist
-/routes/dist
-node_modules
+/node_modules/
+/dist/
+.env
+/data/
+npm-debug.log
