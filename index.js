@@ -9,6 +9,8 @@ const authRoute = require("./routes/auth");
 const postRoute = require("./routes/posts");
 const PORT = process.env.PORT || 5000;
 const multer = require("multer");
+const conversationRoute = require("./routes/conversations");
+const messageRoute = require("./routes/messages");
 const router = express.Router();
 const path = require("path");
 
@@ -51,7 +53,8 @@ const storage = multer.diskStorage({
 app.use("/api/users", userRoute);
 app.use("/api/auth", authRoute);
 app.use("/api/posts", postRoute);
-
+app.use("/api/conversations", conversationRoute);
+app.use("/api/messages", messageRoute);
 
 app.listen(PORT, () =>{
     console.log(`Listening on port ${PORT}`);
