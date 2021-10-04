@@ -3,7 +3,6 @@ const app = express();
 const dotenv = require("dotenv");
 const DbConnect = require('./database');
 const helmet = require("helmet");
-const cookieParser = require("cookie-parser");
 const morgan = require("morgan");
 const userRoute = require("./routes/users");
 const authRoute = require("./routes/auth");
@@ -28,7 +27,6 @@ app.use("/images", express.static(path.join(__dirname, "public/images")));
 
 
 //middleware
-app.use(cookieParser());
 app.use(express.json());
 app.use(helmet());
 app.use(morgan("common"));
